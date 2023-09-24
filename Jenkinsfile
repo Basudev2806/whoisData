@@ -25,6 +25,16 @@ pipeline {
                 }
             }
         }
+        stage('Configure Environment') {
+            steps {
+                script {
+                    // Add /usr/local/bin to the PATH
+                    def customPath = '/usr/local/bin'
+                    def currentPath = sh(script: 'echo $PATH', returnStdout: true).trim()
+                    env.PATH = "${customPath}:${currentPath}"
+                }
+            }
+        }
         stage("Deploy"){
             steps {
                 echo "Deploying the container"
