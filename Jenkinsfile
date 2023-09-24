@@ -4,7 +4,7 @@ pipeline {
     stages{
         stage("Clone Code"){
             steps {
-                sh 'echo $PATH'
+                sh "echo $PATH"
                 echo "Cloning the code"
                 git url:"https://github.com/Basudev2806/whoisData.git", branch: "master"
             }
