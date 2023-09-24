@@ -4,7 +4,7 @@ FROM mattrayner/lamp:latest
 # Expose port 80 for web access
 EXPOSE 80
 # Set the working directory
-WORKDIR /dockers
+WORKDIR /
 
 ADD /home/ubuntu/whoisData /app
 ADD /home/ubuntu/mysql /var/lib/mysql
