@@ -4,6 +4,7 @@ pipeline {
     stages{
         stage("Clone Code"){
             steps {
+                sh 'echo $PATH'
                 echo "Cloning the code"
                 git url:"https://github.com/Basudev2806/whoisData.git", branch: "master"
             }
@@ -27,7 +28,7 @@ pipeline {
         stage("Deploy"){
             steps {
                 echo "Deploying the container"
-                sh "docker compose down && docker compose up -d"
+                sh "docker-compose down && docker-compose up -d"
                 
             }
         }
