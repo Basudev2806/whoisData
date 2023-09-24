@@ -6,8 +6,8 @@ EXPOSE 80
 # Set the working directory
 WORKDIR /
 
-ADD ./whoisData /app
-ADD ./mysql /var/lib/mysql
+ADD . /app
+# ADD . /var/lib/mysql
 
 # Mount the /app and /var/lib/mysql directories
 #VOLUME /app
