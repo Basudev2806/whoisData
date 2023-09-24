@@ -1,0 +1,27 @@
+version: '3'
+services:
+  lamp:
+    container_name: whoisdata
+    image: mattrayner/lamp:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /home/ubuntu/whoisData :/app
+      - /home/ubuntu/mysql :/var/lib/mysql
+# by default mysql no password
+    environment:
+      MYSQL_ROOT_PASSWORD: Basudev@2806
+
+  # filebrowser:
+  #   container_name: filebrowser
+  #   image: filebrowser/filebrowser:s6
+  #   ports:
+  #     - "8081:80"
+  #   volumes:
+  #     - /home/amit/dockers/:/srv  # Replace with the path on your host where you want to share files
+  #     - ./filebrowser.db:/database/filebrowser.db  # Create an empty filebrowser.db file
+  #   environment:
+  #     - PUID=1000
+  #     - PGID=1000
+  #   restart: unless-stopped
